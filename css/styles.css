@@ -1,0 +1,269 @@
+
+:root{
+  --meta: #2B3440;
+  --bg: #F5F4F0;
+  --ink: #0E0E0E;
+  --muted: #0E0E0E;
+  --hair: rgba(18,18,18,.38);
+  --hair-strong: rgba(18,18,18,.46);
+
+  --w-nav: 960px;
+  --w-content: 960px;
+  --w-text: 720px;
+
+  --s16: 16px;
+  --s24: 24px;
+  --s32: 32px;
+  --s48: 48px;
+  --s64: 64px;
+  --s96: 96px;
+
+  /* Type sizes per Figma */
+  --fs-h1: 52px;
+  --lh-h1: 56px;
+  --ls-h1: -1px;
+
+  --fs-body: 17px;
+  --lh-body: 26px;
+
+  --fs-meta: 13px;
+  --lh-meta: 19px;
+  --ls-meta: 1px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "EB Garamond", "Garamond", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a{color:inherit; text-decoration:none;}
+a:hover{opacity:.85;}
+
+.page{width:100%; padding: var(--s24) 0 var(--s96);}
+
+.nav-wrap{width: var(--w-nav); margin:0 auto; padding-top: var(--s16);}
+.nav{display:flex; align-items:center; justify-content:space-between; gap: var(--s32);}
+.nav-left,.nav-center,.nav-right{display:flex; align-items:center; gap: var(--s24); white-space:nowrap;}
+
+.brand{
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  letter-spacing: var(--ls-meta);
+  color: var(--muted);
+}
+
+.nav a{
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  letter-spacing: var(--ls-meta);
+  color: var(--muted);
+}
+.nav a.active{color: var(--ink);}
+
+.langs{display:flex; gap: 12px;}
+.nav-right .divider{width:1px; height:12px; background: var(--hair); margin: 0 10px;}
+
+.content{width: var(--w-content); margin:0 auto; padding-top: var(--s64);}
+
+h1{
+  margin:0 0 var(--s32);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  font-weight: 600;
+  letter-spacing: var(--ls-h1);
+}
+
+/* horizontal line: always 960px */
+.rule{
+  width: var(--w-content);
+  height:1px;
+  background: var(--hair-strong);
+  border:0;
+  margin: var(--s32) 0 var(--s32);
+}
+
+/* Body blocks: 720px fixed */
+.text{
+  width: var(--w-text);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--muted);
+}
+.text p{margin:0 0 var(--s24);}
+.text p:last-child{margin-bottom:0;}
+
+/* Meta blocks: 720px fixed */
+.meta{
+  margin:0 0 var(--s24);
+  width: var(--w-text);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  letter-spacing: var(--ls-meta);
+  color: var(--muted);
+}
+
+.italic{font-style: italic;}
+
+/* Archive lists */
+.archive{width: var(--w-text); margin-top: var(--s16);}
+.archive-item{padding:10px 0;}
+.archive-item a{border-bottom:1px solid var(--hair);}
+.archive-item a:hover{border-bottom-color: var(--ink);}
+.archive-date{
+  display:block;
+  margin-top:6px;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  letter-spacing: var(--ls-meta);
+  color: var(--muted);
+}
+
+/* Names list on Gestalt */
+.names{width: var(--w-text); color: var(--muted); margin-top: var(--s16);}
+.names div{padding:6px 0; font-size: var(--fs-body); line-height: var(--lh-body);}
+
+.footer-line{margin-top: var(--s24); width: var(--w-text); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--muted);}
+
+/* Begegnung facts */
+.facts{
+  width: var(--w-text);
+  margin-top: var(--s16);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  letter-spacing: var(--ls-meta);
+  color: var(--muted);
+}
+.facts div{margin:2px 0;}
+.facts .link{margin-top: var(--s32);}
+
+/* Anfrage form */
+.form{width: var(--w-text); margin-top: var(--s16);}
+.field{margin:0 0 var(--s24);}
+.field label{
+  display:block;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  letter-spacing: var(--ls-meta);
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.field input{
+  width:100%;
+  border:none;
+  border-bottom:1px solid var(--hair-strong);
+  background:transparent;
+  padding: 0 0 2px;
+  font-family:inherit;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  outline:none;
+}
+.field input:focus{border-bottom-color: var(--ink);}
+
+
+/* --- v4 overrides per latest spec --- */
+body{ background: var(--bg); color: var(--ink); }
+
+h1{ color: var(--ink); }
+.text, .text p, .footer-line, .names, .names div{ color: var(--ink); }
+
+.rule{ background: var(--ink); }
+
+/* Meta color */
+.meta{ color: var(--meta); }
+.brand, .nav a, .archive-date, .facts{ color: var(--meta); }
+
+/* Archive links: no underline/border */
+.archive-item a{ border-bottom: none !important; }
+.archive-item a:hover{ opacity: .85; }
+
+
+
+/* Headline + meta block spacing for Texte / Zur Zeit (per PNG) */
+.content--metahead h1{
+  margin-bottom: var(--s24);
+}
+.content--metahead .meta{
+  margin-top: 0;
+  margin-bottom: var(--s48);
+}
+
+
+.facts .item{
+  margin: 0 0 var(--s64);
+}
+.facts .item:last-of-type{
+  margin-bottom: 0;
+}
+.facts .link{
+  margin-top: var(--s96);
+}
+
+/* Begegnung facts spacing (per PNG, tight) */
+.facts .item{
+  margin: 0 0 var(--s16);
+}
+.facts .item:last-of-type{
+  margin-bottom: 0;
+}
+.facts .link{
+  margin-top: var(--s96);
+}
+
+/* Anfrage submit */
+.submit{
+  display: inline-block;
+  margin-top: var(--s32);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  letter-spacing: var(--ls-meta);
+  color: var(--meta);
+}
+.submit:hover{ opacity: .85; }
+
+/* --- Anfrage form (PNG match) ---
+   The perceived gap comes mostly from line-height leading + input wrapper height.
+   In the PNG, the underline sits close to the label.
+*/
+.form .field{ margin: 0 0 var(--s24); }
+.form .field label{ margin-bottom: 0; }
+
+/* Visual line only */
+.line-input{
+  position: relative;
+  margin-top: 2px; /* 8px target - ~6px built-in leading (19-13) */
+  height: 0;
+}
+.line-input::before{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:0;
+  height:1px;
+  background: rgba(14,14,14,.46);
+}
+
+/* Keep input for later, but hide it visually (no layout impact) */
+.line-input input{
+  position:absolute;
+  left:-9999px;
+  width:1px; height:1px;
+  opacity:0;
+}
+
+/* Anfrage: more space between rule and first field */
+.rule + .form{
+  margin-top: var(--s48);
+}
