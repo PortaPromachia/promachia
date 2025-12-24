@@ -267,3 +267,49 @@ h1{ color: var(--ink); }
 .rule + .form{
   margin-top: var(--s48);
 }
+
+
+/* --- Mobile layout (keine Desktop-Änderung) --- */
+@media (max-width: 960px) {
+  body { padding: 0 16px; }
+
+  .nav, .content { width: 100%; max-width: 100%; }
+  .rule { width: 100%; max-width: 960px; }
+
+  .text, .archive, .facts, .form { width: 100%; max-width: 720px; }
+
+  h1 { font-size: 40px; line-height: 46px; letter-spacing: -1px; }
+
+  .content { padding-top: 64px; }
+  h1 { margin-bottom: 32px; }
+  .content--metahead h1 { margin-bottom: 16px; }
+  .content--metahead .meta { margin-bottom: 32px; }
+
+  .rule { margin: 32px 0; }
+
+  .nav { flex-wrap: wrap; row-gap: 12px; }
+  .nav-center { order: 3; width: 100%; justify-content: flex-start; }
+  .nav-right { margin-left: auto; }
+}
+
+
+
+/* Nav legal link (Impressum/Imprint) */
+.nav-legal{
+  color: var(--c-meta);
+  text-decoration: none;
+}
+.nav-legal:hover{ text-decoration: underline; }
+
+/* Legal page typography: headings in body, text in meta, no paragraph spacing */
+.legal-page p{ margin: 0; }
+.legal-page .section-title{
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: var(--c-text);
+  margin: 0;
+}
+.legal-page .meta{
+  margin: 0;
+}
