@@ -313,3 +313,36 @@ h1{ color: var(--ink); }
 .legal-page .meta{
   margin: 0;
 }
+
+
+/* --- Mobile navigation refinement (stacked rows, no horizontal scroll) --- */
+@media (max-width: 960px) {
+
+  .nav{
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 16px; /* Promachia -> sections */
+  }
+
+  .nav-left{ width: 100%; }
+
+  .nav-center{
+    width: 100%;
+    justify-content: flex-start;
+    column-gap: 24px;
+    row-gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .nav-right{
+    width: 100%;
+    justify-content: flex-start;
+    column-gap: 16px;
+    row-gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* reduce visual noise in dividers on mobile */
+  .nav-right .divider{ margin: 0 8px; }
+
+}
